@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plowing Machines</title>
+  <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+
+<body>
+  <header>
+    <h1>Ploughing Machines</h1>
+    <label for="menu">Explore Machine Categories:</label><br>
+    <select id="menu" name="menu" onchange="redirectToPage()">
+        <option value="#">Select an option</option>
+      <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+      <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+      <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+    </select>
+  </header>
+   <script>
+    function redirectToPage() {
+      const select = document.getElementById("menu");
+      const selectedValue = select.options[select.selectedIndex].value;
+      if (selectedValue !== "#") {
+        window.location.href = selectedValue;
+      }
+    }
+  </script>
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    // Add this script at the end of your HTML or in a separate .js file
+    $(document).ready(function () {
+      $(".subcategory a").click(function (event) {
+        event.preventDefault();
+        // Get machine details based on the clicked subcategory link
+        const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+        updateMachineDetails(machineDetails);
+      });
+
+      // Function to fetch machine details (replace with your data retrieval logic)
+      function getMachineDetails(machineName) {
+        // Replace with your data retrieval logic, e.g., from a JSON API
+        // Return an object with machine details
+        return {
+          name: "Crane",
+          image: "crane-image.jpg",
+          rate: "$XXX per day",
+          rating: "★★★★☆",
+          description: "This is a description of the crane...",
+        };
+      }
+
+      // Function to update machine details in the content section
+      function updateMachineDetails(details) {
+        $(".machine-details img").attr("src", details.image);
+        $(".machine-details h2").text(details.name);
+        $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+        $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+        $(".machine-description p").text(details.description);
+      }
+    });
+
+
+  </script>
+  <div class="vertical-box">
+    <h3>Categories</h3>
+    <div class="category-links">
+    
+    <a href="agricombineharvestors.html">Combine Harvesters</a>
+  
+    <a href="agriseeddrills.html">Seed Drills</a>
+   
+    <a href="agrithreshers.html">Threshers</a>
+    <a href="agritractors.html">Tractors</a>
+    <a href="agriplows.html">plows</a>
+    <a href="agricultivators.html">Cultivators</a>
+    </div>
+  </div>
+  
+
+
+  <section id="image-gallery">
+    <div class="row">
+      <div class="image-container">
+        <img src="images/ploughdisc.jpg" width="300" height="300" alt="Image 1">
+        <h2>Disc Plough</h2>
+        <p>Rate: 6500 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Disc Plough&machineRating=★★★★☆&machinePrice=6500 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/ploughmounted.jpg" width="300" height="300" alt="Image 2">
+        <h2>Mounted Disc plough</h2>
+        <p>Rate: 8000 per day</p>
+        <p>Rating: ★★★★☆</p>
+      <a href="payment.php?machineName=Mounted Disc Plough&machineRating=★★★★☆&machinePrice=8000 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/ploughmb.jpg" width="300" height="300" alt="Image 3">
+
+        <h2>Mounted MB plough</h2>
+        <p>Rate: 8500 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Mounted MB Plough&machineRating=★★★★☆&machinePrice=8500 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+    </div>
+    <div class="content-section">
+      <h2>Plows</h2>
+      <div class="machine-details">
+          <!-- Additional content -->
+          <p>Description: Plows are agricultural implements designed to turn over and loosen soil, preparing it for planting crops. They come in various types and sizes, including moldboard plows, disc plows, chisel plows, and subsoilers, each suited for different soil types, conditions, and farming practices.</p>
+          <h3>Technical Specifications</h3>
+          <ul>
+              <li>Plow Type: Moldboard, Disc, Chisel, Subsoiler, etc.</li>
+              <li>Working Width: Varies based on model and design (e.g., 10-16 inches)</li>
+              <li>Plowing Depth: Adjustable, typically ranging from 6 to 12 inches</li>
+              <li>Attachment Method: Three-point hitch, Drawbar, or Tractor-mounted frame</li>
+              <li>Construction Material: High-strength steel, Cast iron, or Composite materials</li>
+              <li>Number of Furrows: Single, Double, Triple, or Multiple furrow configurations</li>
+          </ul>
+          <h3>Usage Tips</h3>
+          <p>1. Choose the appropriate type and size of plow based on soil type, moisture content, and desired depth of tillage.<br>
+             2. Adjust the plow's cutting depth and angle according to soil conditions, terrain, and crop requirements to achieve optimal results.<br>
+             3. Ensure proper tractor setup and alignment to maintain consistent furrow depth and minimize soil compaction.<br>
+             4. Regularly inspect and maintain plow components, including blades, coulters, shares, and moldboards, to ensure smooth operation and extend equipment lifespan.</p>
+  
+          <h3>FAQs</h3>
+          <div class="faqs">
+              <p>Q: What is the difference between moldboard plows and disc plows?</p>
+              <p>A: Moldboard plows use a curved, steel moldboard to invert and bury soil, while disc plows feature multiple cutting discs that slice through the soil, breaking it into smaller pieces. Moldboard plows are typically used for primary tillage, while disc plows are more suited for secondary tillage and rough terrain.</p>
+              <p>Q: How do I determine the appropriate plowing depth?</p>
+              <p>A: The plowing depth depends on factors such as soil type, moisture content, crop type, and farming practices. Generally, plow to a depth that allows for proper seedbed preparation without excessively disturbing the soil structure or underlying layers.</p>
+          </div>
+          
+          <h3>Rental Terms and Conditions</h3>
+          <p>1. Rental period is calculated on a per-day or per-hour basis, depending on the agreement.<br>
+             2. Customers are responsible for any damages to the plow during the rental period, excluding normal wear and tear.<br>
+             3. Plows must be operated by trained personnel in accordance with safety guidelines and manufacturer instructions.<br>
+             4. Fuel, lubricants, and maintenance costs are the responsibility of the customer during the rental period.</p>
+      </div>
+  </div>
+  
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+          <p>for more details contact us</p>
+          <p>stay connect with us</p>
+          <div class="contact">
+            <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+            <span><i class="fas fa-phone"></i> +919876543210</span>
+            <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+          </div>
+        </div>
+         
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 Rent Machines. All rights reserved.
+      </div>
+    </footer>
+</body>
+
+</html>

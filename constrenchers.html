@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trencher Machines</title>
+  <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+
+<body>
+  <header>
+    <h1>Construction Trenchers</h1>
+
+    <label for="menu">Explore Machine Categories:</label><br>
+      <select id="menu" name="menu" onchange="redirectToPage()">
+          <option value="#">Select an option</option>
+      <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+      <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+      <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+    </select>
+  </header>
+  <script>
+    function redirectToPage() {
+      const select = document.getElementById("menu");
+      const selectedValue = select.options[select.selectedIndex].value;
+      if (selectedValue !== "#") {
+        window.location.href = selectedValue;
+      }
+    }
+  </script>
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    // Add this script at the end of your HTML or in a separate .js file
+    $(document).ready(function () {
+      $(".subcategory a").click(function (event) {
+        event.preventDefault();
+        // Get machine details based on the clicked subcategory link
+        const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+        updateMachineDetails(machineDetails);
+      });
+
+      // Function to fetch machine details (replace with your data retrieval logic)
+      function getMachineDetails(machineName) {
+        // Replace with your data retrieval logic, e.g., from a JSON API
+        // Return an object with machine details
+        return {
+          name: "Crane",
+          image: "crane-image.jpg",
+          rate: "$XXX per day",
+          rating: "★★★★☆",
+          description: "This is a description of the crane...",
+        };
+      }
+
+      // Function to update machine details in the content section
+      function updateMachineDetails(details) {
+        $(".machine-details img").attr("src", details.image);
+        $(".machine-details h2").text(details.name);
+        $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+        $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+        $(".machine-description p").text(details.description);
+      }
+    });
+
+
+  </script>
+  <div class="vertical-box">
+    <h3>Categories</h3>
+    <div class="category-links">
+      <a href="conscrane1.html">Crane</a>
+      <a href="consexcavactor.html">Excavator</a>
+      <a href="conspipedrivers.html">Pipe Drivers</a>
+      <a href="constrenchers.html">Trenchers</a>
+      <a href="consbackhoes.html">Backhoes</a>
+      <a href="consloaders.html">Loaders</a>
+    </div>
+  </div>
+  
+
+  <section id="image-gallery">
+    <div class="row">
+      <div class="image-container">
+        <img src="images/trencherbucketwheel.jpg" width="300" height="400" alt="Image 1">
+        <h2>Bucket Wheel Trencher</h2>
+        <p>Rate:4000 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Bucket Wheel Trencher&machineRating=★★★★☆&machinePrice=4000 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/trencherchain.jpg" width="300" height="200" alt="Image 2">
+        <h2>Chain Trencher</h2>
+        <p>Rate: 4500 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Chain Trencher&machineRating=★★★★☆&machinePrice=4500 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/trencheredging.jpg" width="300" height="300" alt="Image 3">
+
+        <h2>Edging Trencher</h2>
+        <p>Rate:6000 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Edging Trencher&machineRating=★★★★☆&machinePrice=6000 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+    </div>
+    <div class="content-section">
+      <h2>Constructional Trenchers</h2>
+      <div class="machine-details">
+          <!-- Additional content -->
+          <p>Description: Constructional trenchers are heavy-duty machines used to dig trenches for laying cables, pipes, and drainage systems in construction projects. They are essential for excavating soil efficiently and precisely.</p>
+          <h3>Technical Specifications</h3>
+          <ul>
+              <li>Dimensions: 120 x 60 x 80 inches</li>
+              <li>Weight: 5,000 lbs</li>
+              <li>Engine Power: 100 HP</li>
+              <li>Trenching Depth: Up to 10 feet</li>
+              <li>Trenching Width: Up to 24 inches</li>
+          </ul>
+          <h3>Usage Tips</h3>
+          <p>1. Always inspect the site and mark the trenching path before operating the trencher.<br>
+             2. Adjust the depth and width settings based on the project requirements.<br>
+             3. Keep bystanders and workers away from the operating area to prevent accidents.<br>
+             4. Regularly maintain the trencher by lubricating moving parts and replacing worn-out components.</p>
+  
+          <h3>FAQs</h3>
+          <div class="faqs">
+              <p>Q: Can the trencher be used in rocky soil conditions?</p>
+              <p>A: Yes, but it may require special teeth attachments for better performance.</p>
+              <p>Q: How deep can the trencher dig?</p>
+              <p>A: The trencher can dig trenches up to 10 feet deep, depending on soil conditions.</p>
+          </div>
+          
+          <h3>Rental Terms and Conditions</h3>
+          <p>1. Rental period is calculated on a per-day basis.<br>
+             2. Customers are responsible for any damages to the machine during the rental period.<br>
+             3. Machines must be returned in the same condition as they were received.<br>
+             4. Late fees may apply for overdue returns.</p>
+      </div>
+  </div>
+  
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+          <p>for more details contact us</p>
+          <p>stay connect with us</p>
+          <div class="contact">
+            <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+            <span><i class="fas fa-phone"></i> +919876543210</span>
+            <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+          </div>
+        </div>
+         
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 Rent Machines. All rights reserved.
+      </div>
+    </footer>
+</body>
+
+</html>

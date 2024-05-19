@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine Harvestors</title>
+    <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+<body>
+    <header>
+        <h1>Combine Harvesters</h1>
+
+        <label for="menu">Explore Machine Categories:</label><br>
+    <select id="menu" name="menu" onchange="redirectToPage()">
+        <option value="#">Select an option</option>
+            <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+            <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+            <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+        </select>
+    </header>
+         <script>
+            function redirectToPage() {
+                const select = document.getElementById("menu");
+                const selectedValue = select.options[select.selectedIndex].value;
+                if (selectedValue !== "#") {
+                    window.location.href = selectedValue;
+                }
+            }
+        </script>
+            <!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+   
+  // Add this script at the end of your HTML or in a separate .js file
+$(document).ready(function () {
+    $(".subcategory a").click(function (event) {
+      event.preventDefault();
+      // Get machine details based on the clicked subcategory link
+      const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+      updateMachineDetails(machineDetails);
+    });
+  
+    // Function to fetch machine details (replace with your data retrieval logic)
+    function getMachineDetails(machineName) {
+      // Replace with your data retrieval logic, e.g., from a JSON API
+      // Return an object with machine details
+      return {
+        name: "Crane",
+        image: "crane-image.jpg",
+        rate: "$XXX per day",
+        rating: "★★★★☆",
+        description: "This is a description of the crane...",
+      };
+    }
+  
+    // Function to update machine details in the content section
+    function updateMachineDetails(details) {
+      $(".machine-details img").attr("src", details.image);
+      $(".machine-details h2").text(details.name);
+      $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+      $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+      $(".machine-description p").text(details.description);
+    }
+  });
+  
+
+        </script>
+        <div class="vertical-box">
+          <h3>Categories</h3>
+          <div class="category-links">
+          
+          <a href="agricombineharvestors.html">Combine Harvesters</a>
+        
+          <a href="agriseeddrills.html">Seed Drills</a>
+         
+          <a href="agrithreshers.html">Threshers</a>
+          <a href="agritractors.html">Tractors</a>
+          <a href="agriplows.html">plows</a>
+          <a href="agricultivators.html">Cultivators</a>
+          </div>
+        </div>
+        
+
+
+          <section id="image-gallery">
+            <div class="row">
+                <div class="image-container">
+                    <img src="images/agricombine.jpg" width="300" height="300" alt="Image 1">
+                    <h2>Combine Harvestor</h2>
+                    <p>Rate: 6000 per day</p>
+                    <p>Rating: ★★★★☆</p>
+                    <a href="payment.php?machineName=Combine Harvestor&machineRating=★★★★☆&machinePrice=6000 per day ">
+
+                      <button id="book-button">Book Now</button>
+                    </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/harvestmachine.jpg" width="300" height="300" alt="Image 2">
+                    <h2>Harvest Machine</h2>
+              <p>Rate: 6500 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Harvest Machine&machineRating=★★★★☆&machinePrice=6500 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/harvesterpaddy.jpg" width="300" height="300" alt="Image 3">
+ 
+              <h2>Paddy Harvesting Machine</h2>
+              <p>Rate: 4900 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Paddy Harvesting Machine&machineRating=★★★★☆&machinePrice=4900 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+            </div>
+            <div class="content-section">
+              <h2>Combine Harvesters</h2>
+              <div class="machine-details">
+                  <!-- Additional content -->
+                  <p>Description: A combine harvester, also known as a combine or harvester, is a versatile agricultural machine used for harvesting grain crops such as wheat, corn, barley, and rice. It combines several harvesting processes, including reaping, threshing, and winnowing, into a single operation, increasing efficiency and productivity in crop harvesting.</p>
+                  <h3>Technical Specifications</h3>
+                  <ul>
+                      <li>Engine Power: XXX horsepower (HP)</li>
+                      <li>Cutting Width: XXX feet/meters</li>
+                      <li>Grain Tank Capacity: XXX bushels/liters</li>
+                      <li>Threshing System: Rotary or Axial Flow</li>
+                      <li>Grain Loss: Less than X%</li>
+                      <li>Operating Speed: Up to XXX acres/hectares per hour</li>
+                  </ul>
+                  <h3>Usage Tips</h3>
+                  <p>1. Adjust combine settings and header height according to crop conditions, moisture content, and crop maturity to optimize harvesting efficiency and minimize grain loss.<br>
+                     2. Regularly inspect and maintain the combine harvester, including cleaning, lubricating, and replacing worn parts, to ensure reliable performance and prevent breakdowns during harvest.<br>
+                     3. Follow proper safety precautions when operating the combine, including wearing seat belts, using handrails, and avoiding operating the machine on steep or uneven terrain.<br>
+                     4. Monitor grain quality and cleanliness during harvesting to minimize contamination and ensure the delivery of high-quality grain for storage or sale.</p>
+          
+                  <h3>FAQs</h3>
+                  <div class="faqs">
+                      <p>Q: How do I adjust the combine settings for different crops?</p>
+                      <p>A: Consult the combine harvester's operator manual for specific adjustment procedures and recommended settings for different crops and conditions. You may need to adjust settings such as rotor or cylinder speed, concave clearance, and fan speed.</p>
+                      <p>Q: Can I use a combine harvester in wet or muddy conditions?</p>
+                      <p>A: While modern combine harvesters are equipped with features such as tracks or large tires for better traction and flotation, it's advisable to avoid harvesting in extremely wet or muddy conditions to prevent soil compaction, crop damage, and equipment bogging.</p>
+                  </div>
+                  
+                  <h3>Rental Terms and Conditions</h3>
+                  <p>1. Rental period is calculated on a per-day basis.<br>
+                     2. Customers are responsible for any damages to the combine harvester during the rental period.<br>
+                     3. Combine harvesters must be operated by trained and qualified personnel in accordance with safety guidelines and local regulations.<br>
+                     4. Late fees may apply for overdue returns of combine harvesters.</p>
+              </div>
+          </div>
+          
+            <footer>
+              <div class="footer-content">
+                <div class="footer-section about">
+                  <h2>About Us</h2>
+                  <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+                  <p>for more details contact us</p>
+                  <p>stay connect with us</p>
+                  <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+                    <span><i class="fas fa-phone"></i> +919876543210</span>
+                    <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+                  </div>
+                </div>
+                 
+              </div>
+              <div class="footer-bottom">
+                &copy; 2024 Rent Machines. All rights reserved.
+              </div>
+            </footer>
+        </body>
+        </html>

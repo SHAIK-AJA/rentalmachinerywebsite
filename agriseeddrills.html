@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed driler Machines</title>
+    <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+<body>
+    <header>
+        <h1>Seed Driller Machines</h1>
+
+        <label for="menu">Explore Machine Categories:</label><br>
+        <select id="menu" name="menu" onchange="redirectToPage()">
+            <option value="#">Select an option</option>
+            <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+            <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+            <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+        </select>
+    </header>
+         <script>
+            function redirectToPage() {
+                const select = document.getElementById("menu");
+                const selectedValue = select.options[select.selectedIndex].value;
+                if (selectedValue !== "#") {
+                    window.location.href = selectedValue;
+                }
+            }
+        </script>
+            <!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+   
+  // Add this script at the end of your HTML or in a separate .js file
+$(document).ready(function () {
+    $(".subcategory a").click(function (event) {
+      event.preventDefault();
+      // Get machine details based on the clicked subcategory link
+      const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+      updateMachineDetails(machineDetails);
+    });
+  
+    // Function to fetch machine details (replace with your data retrieval logic)
+    function getMachineDetails(machineName) {
+      // Replace with your data retrieval logic, e.g., from a JSON API
+      // Return an object with machine details
+      return {
+        name: "Crane",
+        image: "crane-image.jpg",
+        rate: "$XXX per day",
+        rating: "★★★★☆",
+        description: "This is a description of the crane...",
+      };
+    }
+  
+    // Function to update machine details in the content section
+    function updateMachineDetails(details) {
+      $(".machine-details img").attr("src", details.image);
+      $(".machine-details h2").text(details.name);
+      $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+      $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+      $(".machine-description p").text(details.description);
+    }
+  });
+  
+
+        </script>
+        <div class="vertical-box">
+          <h3>Categories</h3>
+          <div class="category-links">
+          
+          <a href="agricombineharvestors.html">Combine Harvesters</a>
+        
+          <a href="agriseeddrills.html">Seed Drills</a>
+         
+          <a href="agrithreshers.html">Threshers</a>
+          <a href="agritractors.html">Tractors</a>
+          <a href="agriplows.html">plows</a>
+          <a href="agricultivators.html">Cultivators</a>
+          </div>
+        </div>
+        
+
+
+          <section id="image-gallery">
+            <div class="row">
+                <div class="image-container">
+                    <img src="images/seeddrillbullock.jpg" width="300" height="300" alt="Image 1">
+                    <h2>Bullock-Drawn Seed Drill</h2>
+                    <p>Rate: 3000 per day</p>
+                    <p>Rating: ★★★★☆</p>
+                    <a href="payment.php?machineName=Bullock Drawn seed Drill&machineRating=★★★★☆&machinePrice=3000 per day ">
+
+                      <button id="book-button">Book Now</button>
+                    </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/seeddrilltractorjpg.jpg" width="300" height="300" alt="Image 2">
+                    <h2> Tractor Drawn Seed Drill</h2>
+              <p>Rate: 5500 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Tractor Drawn Seed Drill&machineRating=★★★★☆&machinePrice=5500 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/agriseeddrills.jpg" width="300" height="300" alt="Image 3">
+ 
+              <h2>Seed Driller</h2>
+              <p>Rate: 5000 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Seed driller&machineRating=★★★★☆&machinePrice=5000 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+            </div>
+            <div class="content-section">
+              <h2>Seed Drills</h2>
+              <div class="machine-details">
+                  <!-- Additional content -->
+                  <p>Description: A seed drill is a specialized agricultural machine used for planting seeds in the soil at precise depths and intervals, facilitating efficient and uniform crop establishment. It consists of a seed hopper, metering mechanism, seed tubes, coulters, and press wheels, allowing farmers to sow seeds with accuracy and consistency.</p>
+                  <h3>Technical Specifications</h3>
+                  <ul>
+                      <li>Working Width: XXX meters/feet</li>
+                      <li>Seed Hopper Capacity: XXX kilograms/liters</li>
+                      <li>Row Spacing: XXX centimeters/inches</li>
+                      <li>Seed Depth: Adjustable, typically between X to Y centimeters/inches</li>
+                      <li>Seed Metering System: Mechanical or Pneumatic</li>
+                      <li>Drive System: Ground-driven or Hydraulic</li>
+                  </ul>
+                  <h3>Usage Tips</h3>
+                  <p>1. Calibrate the seed drill before use to ensure accurate seed placement and spacing, taking into account seed size, type, and planting rate.<br>
+                     2. Adjust seed depth and row spacing according to soil type, moisture content, and crop requirements for optimal germination and crop establishment.<br>
+                     3. Maintain consistent forward speed and ground contact pressure to achieve uniform seed placement and avoid skips or overlaps in seeding.<br>
+                     4. Regularly inspect and clean seed drill components, including seed tubes, metering units, and depth control mechanisms, to prevent blockages and ensure smooth operation.</p>
+          
+                  <h3>FAQs</h3>
+                  <div class="faqs">
+                      <p>Q: Can I use a seed drill for different types of seeds?</p>
+                      <p>A: Yes, most seed drills are designed to handle a wide range of seed types and sizes, including grains, legumes, and cover crops. However, it's essential to adjust the seed drill settings and metering mechanisms according to the specific seed characteristics and planting requirements.</p>
+                      <p>Q: How do I prevent seed drill clogging in wet or sticky soil conditions?</p>
+                      <p>A: To minimize seed drill clogging in wet or sticky soil conditions, consider using seed treatment products to reduce seed adhesion, adjust seed depth and spacing settings to accommodate soil moisture levels, and periodically clean seed drill components to remove mud and debris.</p>
+                  </div>
+                  
+                  <h3>Rental Terms and Conditions</h3>
+                  <p>1. Rental period is calculated on a per-day basis.<br>
+                     2. Customers are responsible for any damages to the seed drill during the rental period.<br>
+                     3. Seed drills must be operated by trained and qualified personnel in accordance with safety guidelines and local regulations.<br>
+                     4. Late fees may apply for overdue returns of seed drills.</p>
+              </div>
+          </div>
+          
+            <footer>
+              <div class="footer-content">
+                <div class="footer-section about">
+                  <h2>About Us</h2>
+                  <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+                  <p>for more details contact us</p>
+                  <p>stay connect with us</p>
+                  <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+                    <span><i class="fas fa-phone"></i> +919876543210</span>
+                    <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+                  </div>
+                </div>
+                 
+              </div>
+              <div class="footer-bottom">
+                &copy; 2024 Rent Machines. All rights reserved.
+              </div>
+            </footer>
+          </body>
+        </html>

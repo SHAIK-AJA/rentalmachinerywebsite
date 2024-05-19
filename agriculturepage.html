@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Agriculture Machines</title>
+    <link rel="stylesheet" type="text/css" href="mainmachines.css">
+</head>
+<body>
+    <header>
+        <h1>Explore Our Machine Rentals</h1>
+
+        <label for="menu">Browse Machine Categories:</label><br>
+        
+        <select id="menu" name="menu" onchange="redirectToPage()">
+            <option value="#">Select a type</option>
+            <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+            <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+            <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+        </select>
+    </header>
+    <h2>Here are the agriculture machines</h2>
+        <script>
+            function redirectToPage() {
+                const select = document.getElementById("menu");
+                const selectedValue = select.options[select.selectedIndex].value;
+                if (selectedValue !== "#") {
+                    window.location.href = selectedValue;
+                }
+            }
+        </script>
+        <section id="image-gallery">
+            <div class="row">
+                <div class="image-container">
+                    <img src="images/agrithresher.jpg" width="300" height="300" alt="Image 1">
+                    <h2>Thresher</h2>
+                    <p>Rate: 5000 per day</p>
+                    <p>Rating: ★★★★★</p>
+                    <a href="agrithreshers.html">
+                        <button id="book-button">view details</button>  
+                    </a>
+
+                </div>
+                <div class="image-container">
+                    <img src="images/agritractor.jpg" width="300" height="300" alt="Image 2">
+                    <h2>Tractor</h2>
+                    <p>Rate: 3000 per day</p>
+                    <p>Rating: ★★★★★</p>
+                    <a href="agritractors.html">
+                        <button id="book-button">view details</button>  
+                    </a>
+
+                </div>
+                <div class="image-container">
+                    <img src="images/agriseeddrills.jpg" width="300" height="300" alt="Image 3">
+                    <h2>Seed Driller Machine</h2>
+                    <p>Rate: 5000 per day</p>
+                    <p>Rating: ★★★★★</p>
+                    <a href="agriseeddrills.html">
+                        <button id="book-button">view details</button>  
+                    </a>
+
+                </div>
+            </div>
+            <!-- Repeat the above row for additional sets of images -->
+        </section>
+        <section id="image-gallery">
+            <div class="row">
+                <div class="image-container">
+                    <img src="images/agricombine.jpg" width="300" height="300" alt="Image 1">
+                    <h2>Combine Harvester</h2>
+                    <p>Rate: 6000 per day</p>
+                    <p>Rating: ★★★★★</p>
+                    <a href="agricombineharvestors.html">
+                        <button id="book-button">view details</button>  
+                    </a>
+
+                </div>
+                <div class="image-container">
+                    <img src="images/agriplow.jpg" width="300" height="300" alt="Image 2">
+                    <h2>Plowing machine</h2>
+                    <p>Rate: 6000 per day</p>
+                    <p>Rating: ★★★★★</p>
+                    <a href="agriplows.html">
+                        <button id="book-button">view details</button>  
+                    </a>
+
+                </div>
+                <div class="image-container">
+                    <img src="images/agricultivator.jpg" width="300" height="300" alt="Image 3">
+                    <h2>Cultivator</h2>
+                    <p>Rate: 3000 per day</p>
+                    <p>Rating: ★★★★★</p>
+                    <a href="agricultivators.html">
+                        <button id="book-button">view details</button>  
+                    </a>
+
+                </div>
+            </div>
+            <section class="additional-info">
+                <h3>Why Register?</h3>
+                <p>By registering an account with us, you gain access to exclusive features and benefits:</p>
+                <ul>
+                    <li>Save your favorite machines for easy access</li>
+                    <li>Track your rental history</li>
+                    <li>Receive special offers and discounts</li>
+                </ul>
+                <p>Don't miss out on these advantages, sign up now!</p>
+            </section>
+            <!-- Repeat the above row for additional sets of images -->
+            <footer>
+                <div class="footer-content">
+                  <div class="footer-section about">
+                    <h2>About Us</h2>
+                    <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+                    <p>for more details contact us</p>
+                    <p>stay connect with us</p>
+                    <div class="contact">
+                      <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+                      <span><i class="fas fa-phone"></i> +919876543210</span>
+                      <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+                    </div>
+                  </div>
+                   
+                </div>
+                <div class="footer-bottom">
+                  &copy; 2024 Rent Machines. All rights reserved.
+                </div>
+              </footer> 
+</body>
+</html>

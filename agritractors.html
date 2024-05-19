@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tractor Machines</title>
+  <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+
+<body>
+  <header>
+    <h1>Tractors </h1>
+
+    <label for="menu">Explore Machine Categories:</label><br>
+    <select id="menu" name="menu" onchange="redirectToPage()">
+        <option value="#">Select an option</option>
+      <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+      <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+      <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+    </select>
+  </header>
+  
+  <script>
+    function redirectToPage() {
+      const select = document.getElementById("menu");
+      const selectedValue = select.options[select.selectedIndex].value;
+      if (selectedValue !== "#") {
+        window.location.href = selectedValue;
+      }
+    }
+  </script>
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    // Add this script at the end of your HTML or in a separate .js file
+    $(document).ready(function () {
+      $(".subcategory a").click(function (event) {
+        event.preventDefault();
+        // Get machine details based on the clicked subcategory link
+        const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+        updateMachineDetails(machineDetails);
+      });
+
+      // Function to fetch machine details (replace with your data retrieval logic)
+      function getMachineDetails(machineName) {
+        // Replace with your data retrieval logic, e.g., from a JSON API
+        // Return an object with machine details
+        return {
+          name: "Crane",
+          image: "crane-image.jpg",
+          rate: "$XXX per day",
+          rating: "★★★★☆",
+          description: "This is a description of the crane...",
+        };
+      }
+
+      // Function to update machine details in the content section
+      function updateMachineDetails(details) {
+        $(".machine-details img").attr("src", details.image);
+        $(".machine-details h2").text(details.name);
+        $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+        $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+        $(".machine-description p").text(details.description);
+      }
+    });
+
+
+  </script>
+  <div class="vertical-box">
+    <h3>Categories</h3>
+    <div class="category-links">
+    
+    <a href="agricombineharvestors.html">Combine Harvesters</a>
+  
+    <a href="agriseeddrills.html">Seed Drills</a>
+   
+    <a href="agrithreshers.html">Threshers</a>
+    <a href="agritractors.html">Tractors</a>
+    <a href="agriplows.html">plows</a>
+    <a href="agricultivators.html">Cultivators</a>
+    </div>
+  </div>
+  
+
+
+  <section id="image-gallery">
+    <div class="row">
+      <div class="image-container">
+        <img src="images/tractorgarden.jpg" width="300" height="300" alt="Image 1">
+        <h2>Garden Tractor</h2>
+        <p>Rate: 3800 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Garden Tractor&machineRating=★★★★☆&machinePrice=3880 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/agritractor.jpg" width="300" height="300" alt="Image 2">
+        <h2>Tractor</h2>
+        <p>Rate: 3000 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Tractor&machineRating=★★★★☆&machinePrice=3000 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/tractorindustrial.jpg" width="300" height="300" alt="Image 3">
+
+        <h2>Industrial Tractor</h2>
+        <p>Rate: 7500 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Industrial Tractor&machineRating=★★★★☆&machinePrice=7500 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+    </div>
+    <div class="content-section">
+      <h2>Tractors</h2>
+      <div class="machine-details">
+          <!-- Additional content -->
+          <p>Description: Tractors are versatile agricultural vehicles designed to provide power and traction for various farming tasks, including plowing, tilling, planting, harvesting, and hauling. They are equipped with powerful engines, durable chassis, and versatile attachments to meet the diverse needs of modern agriculture.</p>
+          <h3>Technical Specifications</h3>
+          <ul>
+              <li>Engine Type: Diesel or Gasoline</li>
+              <li>Engine Power: Varies based on model and configuration (e.g., 30-200 horsepower)</li>
+              <li>Transmission: Manual or Hydrostatic, with multiple forward and reverse gears</li>
+              <li>PTO (Power Take-Off): Standard or Optional, for powering implements such as mowers, tillers, and balers</li>
+              <li>Hydraulics: Hydraulic system for operating attachments and implements, with adjustable flow and pressure settings</li>
+              <li>Three-Point Hitch: Category 0, 1, 2, or 3 hitch for attaching implements and equipment</li>
+              <li>Tires: Various tire options available for different terrains and applications, including standard, turf, industrial, and agricultural lug</li>
+          </ul>
+          <h3>Usage Tips</h3>
+          <p>1. Familiarize yourself with the tractor's controls, including throttle, gears, brakes, and hydraulic levers, before operation.<br>
+             2. Perform routine maintenance tasks such as checking fluid levels, inspecting tires, greasing fittings, and cleaning air filters to ensure optimal performance and longevity.<br>
+             3. Use proper hitching techniques and safety precautions when attaching implements and operating PTO-driven equipment to prevent accidents and damage.<br>
+             4. Adjust tire pressure and ballast weight distribution according to soil conditions, terrain, and workload to maximize traction and minimize soil compaction.</p>
+  
+          <h3>FAQs</h3>
+          <div class="faqs">
+              <p>Q: Can tractors be used for tasks other than farming?</p>
+              <p>A: Yes, tractors are versatile machines used not only in agriculture but also in construction, landscaping, snow removal, and transportation. They can be equipped with various attachments and implements to perform a wide range of tasks.</p>
+              <p>Q: How do I choose the right tractor for my farming operation?</p>
+              <p>A: When selecting a tractor, consider factors such as horsepower requirements, available attachments, terrain conditions, fuel efficiency, and budget. It's essential to match the tractor's capabilities to the specific tasks and scale of your farming operation.</p>
+          </div>
+          
+          <h3>Rental Terms and Conditions</h3>
+          <p>1. Rental period is calculated on a per-day or per-hour basis, depending on the agreement.<br>
+             2. Customers are responsible for any damages to the tractor during the rental period, excluding normal wear and tear.<br>
+             3. Tractors must be operated by trained personnel in accordance with safety guidelines and manufacturer instructions.<br>
+             4. Fuel, lubricants, and maintenance costs are the responsibility of the customer during the rental period.</p>
+      </div>
+  </div>
+  
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+          <p>for more details contact us</p>
+          <p>stay connect with us</p>
+          <div class="contact">
+            <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+            <span><i class="fas fa-phone"></i> +919876543210</span>
+            <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+          </div>
+        </div>
+         
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 Rent Machines. All rights reserved.
+      </div>
+    </footer>
+</body>
+
+</html>

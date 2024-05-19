@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighting towers</title>
+    <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+<body>
+    <header>
+        <h1>Lighting Towers</h1>
+
+        <label for="menu">Explore Machine Categories:</label><br>
+        <select id="menu" name="menu" onchange="redirectToPage()">
+            <option value="#">Select an option</option>
+            <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+            <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+            <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+        </select>
+    </header>
+        <script>
+            function redirectToPage() {
+                const select = document.getElementById("menu");
+                const selectedValue = select.options[select.selectedIndex].value;
+                if (selectedValue !== "#") {
+                    window.location.href = selectedValue;
+                }
+            }
+        </script>
+            <!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+   
+  // Add this script at the end of your HTML or in a separate .js file
+$(document).ready(function () {
+    $(".subcategory a").click(function (event) {
+      event.preventDefault();
+      // Get machine details based on the clicked subcategory link
+      const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+      updateMachineDetails(machineDetails);
+    });
+  
+    // Function to fetch machine details (replace with your data retrieval logic)
+    function getMachineDetails(machineName) {
+      // Replace with your data retrieval logic, e.g., from a JSON API
+      // Return an object with machine details
+      return {
+        name: "Crane",
+        image: "crane-image.jpg",
+        rate: "$XXX per day",
+        rating: "★★★★☆",
+        description: "This is a description of the crane...",
+      };
+    }
+  
+    // Function to update machine details in the content section
+    function updateMachineDetails(details) {
+      $(".machine-details img").attr("src", details.image);
+      $(".machine-details h2").text(details.name);
+      $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+      $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+      $(".machine-description p").text(details.description);
+    }
+  });
+  
+
+        </script>
+        <div class="vertical-box">
+          <h3>Categories</h3>
+	<div class="category-links">
+          <a href="eleclightingtowers.html">Lighting Towers</a>
+          <a href="elecsawtool.html">Saw Tool</a>
+          <a href="elecwieldingmachine.html">Wielding machines</a>
+          <a href="elecaircompressor.html">Air Compressor</a>
+          <a href="elecbatterycharger.html">Battery Chargers</a>
+         <a href="eleccablewire.html">Cable Wires</a>
+ </div>
+</div>
+          <section id="image-gallery">
+            <div class="row">
+                <div class="image-container">
+                    <img src="images/lightingtowermobile.jpg" width="300" height="300" alt="Image 1">
+                    <h2>Mobile Lighting Tower</h2>
+                    <p>Rate: 3000 per day</p>
+                    <p>Rating: ★★★★☆</p>
+                    <a href="payment.php?machineName=Mobile Lighting Tower&machineRating=★★★★☆&machinePrice=3000 per day ">
+
+                      <button id="book-button">Book Now</button>
+                    </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/eleclighttower.jpg" width="300" height="300" alt="Image 2">
+                    <h2>Lighting Tower</h2>
+              <p>Rate: 3000 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Lighting Tower&machineRating=★★★★☆&machinePrice=3000 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/lightingmobile2.jpg" width="300" height="300" alt="Image 3">
+ 
+              <h2>Mobile Lighting Tower</h2>
+              <p>Rate: 4000 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Mobile Lighting Tower&machineRating=★★★★☆&machinePrice=3000 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+            </div>
+            <div class="content-section">
+              <h2>Lighting Towers</h2>
+              <div class="machine-details">
+                  <!-- Additional content -->
+                  <p>Description: Lighting towers are portable illumination systems used to provide temporary lighting in various outdoor settings, such as construction sites, events, and emergency situations. They typically consist of tall poles equipped with powerful lights that can be raised to illuminate large areas.</p>
+                  <h3>Technical Specifications</h3>
+                  <ul>
+                      <li>Number of Lights: Varies (commonly 4 to 8 lights per tower)</li>
+                      <li>Light Type: LED, Metal Halide</li>
+                      <li>Maximum Height: 5 to 10 meters</li>
+                      <li>Power Source: Diesel Generator or External Power Supply</li>
+                  </ul>
+                  <h3>Usage Tips</h3>
+                  <p>1. Position lighting towers strategically to ensure even illumination across the entire area.<br>
+                     2. Regularly check and maintain the lights, bulbs, and electrical connections to ensure optimal performance.<br>
+                     3. Secure the lighting towers properly to prevent them from tipping over in windy conditions.<br>
+                     4. Use lighting towers with adjustable light angles to direct illumination precisely where it's needed.</p>
+          
+                  <h3>FAQs</h3>
+                  <div class="faqs">
+                      <p>Q: Can lighting towers be used indoors?</p>
+                      <p>A: While lighting towers are primarily designed for outdoor use, certain models with low noise and emissions may be suitable for indoor use in well-ventilated areas.</p>
+                      <p>Q: How do I transport lighting towers?</p>
+                      <p>A: Most lighting towers are designed for easy transportation and can be towed behind a vehicle using a trailer or transported on a truck.</p>
+                  </div>
+                  
+                  <h3>Rental Terms and Conditions</h3>
+                  <p>1. Rental period is calculated on a per-day basis.<br>
+                     2. Customers are responsible for any damages to the lighting towers during the rental period.<br>
+                     3. Fuel costs for diesel-powered lighting towers are typically borne by the customer.<br>
+                     4. Lighting towers must be returned in the same condition as they were received, with all components accounted for.</p>
+              </div>
+          </div>
+          
+            <footer>
+              <div class="footer-content">
+                <div class="footer-section about">
+                  <h2>About Us</h2>
+                  <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+                  <p>for more details contact us</p>
+                  <p>stay connect with us</p>
+                  <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+                    <span><i class="fas fa-phone"></i> +919876543210</span>
+                    <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+                  </div>
+                </div>
+                 
+              </div>
+              <div class="footer-bottom">
+                &copy; 2024 Rent Machines. All rights reserved.
+              </div>
+            </footer>
+        </body>
+        </html>

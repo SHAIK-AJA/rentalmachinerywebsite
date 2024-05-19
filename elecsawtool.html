@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+<body>
+    <header>
+        <h1>Saw Tools</h1>
+
+        <label for="menu">Explore Machine Categories:</label><br>
+      <select id="menu" name="menu" onchange="redirectToPage()">
+          <option value="#">Select an option</option>
+            <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+            <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+            <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+        </select>
+    </header>
+
+        <script>
+            function redirectToPage() {
+                const select = document.getElementById("menu");
+                const selectedValue = select.options[select.selectedIndex].value;
+                if (selectedValue !== "#") {
+                    window.location.href = selectedValue;
+                }
+            }
+        </script>
+            <!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+   
+  // Add this script at the end of your HTML or in a separate .js file
+$(document).ready(function () {
+    $(".subcategory a").click(function (event) {
+      event.preventDefault();
+      // Get machine details based on the clicked subcategory link
+      const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+      updateMachineDetails(machineDetails);
+    });
+  
+    // Function to fetch machine details (replace with your data retrieval logic)
+    function getMachineDetails(machineName) {
+      // Replace with your data retrieval logic, e.g., from a JSON API
+      // Return an object with machine details
+      return {
+        name: "Crane",
+        image: "crane-image.jpg",
+        rate: "$XXX per day",
+        rating: "★★★★☆",
+        description: "This is a description of the crane...",
+      };
+    }
+  
+    // Function to update machine details in the content section
+    function updateMachineDetails(details) {
+      $(".machine-details img").attr("src", details.image);
+      $(".machine-details h2").text(details.name);
+      $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+      $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+      $(".machine-description p").text(details.description);
+    }
+  });
+  
+
+        </script>
+        <div class="vertical-box">
+          <h3>Categories</h3>
+	<div class="category-links">
+          <a href="eleclightingtowers.html">Lighting Towers</a>
+          <a href="elecsawtool.html">Saw Tool</a>
+          <a href="elecwieldingmachine.html">Wielding machines</a>
+          <a href="elecaircompressor.html">Air Compressor</a>
+          <a href="elecbatterycharger.html">Battery Chargers</a>
+         <a href="eleccablewire.html">Cable Wires</a>
+ </div>
+</div>
+          <section id="image-gallery">
+            <div class="row">
+                <div class="image-container">
+                    <img src="images/sawjig.jpg" width="300" height="300" alt="Image 1">
+                    <h2>Jig Saw</h2>
+                    <p>Rate: 800 per day</p>
+                    <p>Rating: ★★★★☆</p>
+                    <a href="payment.php?machineName=Jig Saw&machineRating=★★★★☆&machinePrice=800 per day ">
+
+                      <button id="book-button">Book Now</button>
+                    </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/sawcircular.jpg" width="300" height="300" alt="Image 2">
+                    <h2>Circular Saw</h2>
+              <p>Rate:1000 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Circular Saw&machineRating=★★★★☆&machinePrice=1000 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+                <div class="image-container">
+                    <img src="images/sawpanel.jpg" width="300" height="300" alt="Image 3">
+ 
+              <h2>Panel Saw</h2>
+              <p>Rate: 700 per day</p>
+              <p>Rating: ★★★★☆</p>
+              <a href="payment.php?machineName=Panel Saw&machineRating=★★★★☆&machinePrice=700 per day ">
+
+                <button id="book-button">Book Now</button>
+              </a>
+                </div>
+            </div>
+            <div class="content-section">
+              <h2>Electrical Saw Tool</h2>
+              <div class="machine-details">
+                  <!-- Additional content -->
+                  <p>Description: Electrical saw tools are versatile cutting devices powered by electricity. They are commonly used in woodworking, metalworking, construction, and DIY projects. These saws come in various types, including circular saws, jigsaws, reciprocating saws, and miter saws.</p>
+                  <h3>Technical Specifications</h3>
+                  <ul>
+                      <li>Power Source: Electric (110V/220V)</li>
+                      <li>Blade Size: Varies based on saw type</li>
+                      <li>Motor Power: 500W to 3000W</li>
+                      <li>Maximum Cutting Depth: Varies based on saw type</li>
+                  </ul>
+                  <h3>Usage Tips</h3>
+                  <p>1. Always wear appropriate safety gear, including safety glasses and ear protection, when operating electrical saw tools.<br>
+                     2. Ensure that the workpiece is securely clamped or supported before making any cuts to prevent kickback or accidents.<br>
+                     3. Use the correct blade for the material being cut, and ensure that it is sharp and in good condition.<br>
+                     4. Keep the saw blades clean and lubricated for optimal performance and longevity.</p>
+          
+                  <h3>FAQs</h3>
+                  <div class="faqs">
+                      <p>Q: Can electrical saw tools cut metal?</p>
+                      <p>A: Yes, certain types of saws, such as reciprocating saws and metal-cutting circular saws, are designed for cutting metal.</p>
+                      <p>Q: What safety precautions should I take when using electrical saw tools?</p>
+                      <p>A: Always read the manufacturer's instructions and follow proper safety procedures, including wearing appropriate safety gear and securing the workpiece.</p>
+                  </div>
+                  
+                  <h3>Rental Terms and Conditions</h3>
+                  <p>1. Rental period is calculated on a per-day basis.<br>
+                     2. Customers are responsible for any damages to the saw tool during the rental period.<br>
+                     3. Saw blades must be replaced if they become dull or damaged during use.<br>
+                     4. Operators must be trained and certified in the safe operation of electrical saw tools.</p>
+              </div>
+          </div>
+          
+            <footer>
+              <div class="footer-content">
+                <div class="footer-section about">
+                  <h2>About Us</h2>
+                  <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+                  <p>for more details contact us</p>
+                  <p>stay connect with us</p>
+                  <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+                    <span><i class="fas fa-phone"></i> +919876543210</span>
+                    <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+                  </div>
+                </div>
+                 
+              </div>
+              <div class="footer-bottom">
+                &copy; 2024 Rent Machines. All rights reserved.
+              </div>
+            </footer>  
+        </body>
+        </html>

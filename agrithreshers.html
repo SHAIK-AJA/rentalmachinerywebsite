@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threshers machines</title>
+  <link rel="stylesheet" type="text/css" href="excava.css">
+</head>
+
+<body>
+  <header>
+    <h1>Threshers</h1>
+
+    <label for="menu">Explore Machine Categories:</label><br>
+    <select id="menu" name="menu" onchange="redirectToPage()">
+        <option value="#">Select an option</option>
+      <option value="constructionpage.html"> <a href="constructionpage.html">Construction</a></option><br><br><br><br>
+      <option value="agriculturepage.html"> <a href="agriculturepage.html">Agricultural</a></option><br><br>
+      <option value="electricalpage.html"> <a href="electricalpage.html">Electrical</a></option><br><br>
+    </select>
+  </header>
+    <script>
+    function redirectToPage() {
+      const select = document.getElementById("menu");
+      const selectedValue = select.options[select.selectedIndex].value;
+      if (selectedValue !== "#") {
+        window.location.href = selectedValue;
+      }
+    }
+  </script>
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    // Add this script at the end of your HTML or in a separate .js file
+    $(document).ready(function () {
+      $(".subcategory a").click(function (event) {
+        event.preventDefault();
+        // Get machine details based on the clicked subcategory link
+        const machineDetails = getMachineDetails($(this).attr("href").substring(1));
+        updateMachineDetails(machineDetails);
+      });
+
+      // Function to fetch machine details (replace with your data retrieval logic)
+      function getMachineDetails(machineName) {
+        // Replace with your data retrieval logic, e.g., from a JSON API
+        // Return an object with machine details
+        return {
+          name: "Crane",
+          image: "crane-image.jpg",
+          rate: "$XXX per day",
+          rating: "★★★★☆",
+          description: "This is a description of the crane...",
+        };
+      }
+
+      // Function to update machine details in the content section
+      function updateMachineDetails(details) {
+        $(".machine-details img").attr("src", details.image);
+        $(".machine-details h2").text(details.name);
+        $(".machine-details p:eq(0)").text("Rate: " + details.rate);
+        $(".machine-details p:eq(1)").text("Rating: " + details.rating);
+        $(".machine-description p").text(details.description);
+      }
+    });
+
+
+  </script>
+  <div class="vertical-box">
+    <h3>Categories</h3>
+    <div class="category-links">
+    
+    <a href="agricombineharvestors.html">Combine Harvesters</a>
+  
+    <a href="agriseeddrills.html">Seed Drills</a>
+   
+    <a href="agrithreshers.html">Threshers</a>
+    <a href="agritractors.html">Tractors</a>
+    <a href="agriplows.html">plows</a>
+    <a href="agricultivators.html">Cultivators</a>
+    </div>
+  </div>
+  
+  <section id="image-gallery">
+    <div class="row">
+      <div class="image-container">
+        <img src="images/thresherpaddy.jpg" width="300" height="300" alt="Image 1">
+        <h2>Paddy Thresher</h2>
+        <p>Rate: 4200 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=paddy Thresher&machineRating=★★★★☆&machinePrice=4200 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/threshermaizejpg.jpg" width="300" height="300" alt="Image 2">
+        <h2>Maize Thresher</h2>
+        <p>Rate: 6000 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Maize Thresher&machineRating=★★★★☆&machinePrice=6000 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+      <div class="image-container">
+        <img src="images/threshermulticrop.jpg" width="300" height="300" alt="Image 3">
+
+        <h2>Multi Crop Thresher</h2>
+        <p>Rate: 8000 per day</p>
+        <p>Rating: ★★★★☆</p>
+        <a href="payment.php?machineName=Multi Crop Thresher&machineRating=★★★★☆&machinePrice=8000 per day ">
+
+          <button id="book-button">Book Now</button>
+        </a>
+      </div>
+    </div>
+    <div class="content-section">
+      <h2>Agricultural Thrashers</h2>
+      <div class="machine-details">
+          <!-- Additional content -->
+          <p>Description: Agricultural threshers are farm machines used to separate grains from their stalks and husks after harvesting. They are essential for processing crops such as wheat, rice, barley, and oats, enabling farmers to efficiently extract grains for further processing and storage.</p>
+          <h3>Technical Specifications</h3>
+          <ul>
+              <li>Threshing Mechanism: Cylinder and Concave or Rotary Drum</li>
+              <li>Power Source: Tractor PTO (Power Take-Off) or Electric Motor</li>
+              <li>Capacity: Varies depending on model and crop type (e.g., 1000-2000 kg/h for wheat)</li>
+              <li>Threshing Efficiency: Typically above 95%</li>
+              <li>Cleaning System: Sieves, Fans, and Adjustable Airflow</li>
+              <li>Size and Weight: Varies based on capacity and design (e.g., 1500 x 1200 x 1400 mm, 500-800 kg)</li>
+          </ul>
+          <h3>Usage Tips</h3>
+          <p>1. Ensure proper adjustment of threshing and cleaning components based on crop type, moisture content, and harvesting conditions for optimal performance and grain quality.<br>
+             2. Regularly inspect and maintain the thresher's moving parts, including bearings, belts, and chains, to prevent breakdowns and ensure smooth operation during harvesting.<br>
+             3. Adjust the thresher's ground speed and feeding rate according to crop flow and condition to avoid overloading and minimize grain loss.<br>
+             4. Monitor grain cleanliness and quality during threshing operations and make necessary adjustments to the cleaning system to remove impurities and foreign matter effectively.</p>
+  
+          <h3>FAQs</h3>
+          <div class="faqs">
+              <p>Q: Can agricultural threshers process different types of crops?</p>
+              <p>A: Yes, most agricultural threshers are versatile machines designed to handle a wide range of crops, including cereals (wheat, rice, barley), pulses (lentils, chickpeas), oilseeds (soybeans, sunflower), and more. However, it's essential to adjust threshing settings and concave configurations according to the specific crop characteristics and threshing requirements.</p>
+              <p>Q: How do I minimize grain losses during threshing?</p>
+              <p>A: To minimize grain losses during threshing, ensure proper adjustment of threshing and cleaning components, maintain uniform crop flow and feeding, avoid excessive ground speed or rotor RPM, and monitor grain loss levels regularly. Additionally, consider harvesting at optimal moisture levels and adjusting concave clearances and sieve settings to achieve efficient threshing and cleaning without overloading the machine.</p>
+          </div>
+          
+          <h3>Rental Terms and Conditions</h3>
+          <p>1. Rental period is calculated on a per-day basis.<br>
+             2. Customers are responsible for any damages to the thresher during the rental period.<br>
+             3. Threshers must be operated by trained personnel in accordance with safety guidelines and manufacturer instructions.<br>
+             4. Late fees may apply for overdue returns of threshers.</p>
+      </div>
+  </div>
+  
+<footer>
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h2>About Us</h2>
+      <p>Get the heavy equipment machines for rent with reasonable rates per day</p>
+      <p>for more details contact us</p>
+      <p>stay connect with us</p>
+      <div class="contact">
+        <span><i class="fas fa-map-marker-alt"></i> <address>19/34-1 Rythu bazaar , Main Street ,King koti Road, Hydearabad</address></span>
+        <span><i class="fas fa-phone"></i> +919876543210</span>
+        <span><i class="fas fa-envelope"></i>rentmachines@service.com</span>
+      </div>
+    </div>
+     
+  </div>
+  <div class="footer-bottom">
+    &copy; 2024 Rent Machines. All rights reserved.
+  </div>
+</footer>
+</body>
+
+</html>
